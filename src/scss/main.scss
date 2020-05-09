@@ -202,3 +202,51 @@ header, footer{
 
 /* 2. Content ================================= */
 
+
+/* 4. Contact ================================= */
+
+
+.see-us{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	background-color: pink;
+	margin:2% auto;
+	.card{
+		background-color: lightyellow;
+		width: 25%;
+		height: 150px;
+	}
+}
+
+.about-us{
+	background-color: plum;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	margin:2% auto;
+
+		.seen-in{
+			width: 25%;
+		}
+
+		.about-info{
+			width: 60%;
+		}
+}
+
+.contact-us{
+	background-color: lightskyblue;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	margin:2% auto;
+		.contact-info{
+			width: 60%;
+		}
+
+		.follow-us{
+			width: 25%;
+		}
+}
+
