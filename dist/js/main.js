@@ -1,4 +1,2 @@
-"use strict";
-
-console.log("Hello World from main.js! \nChange this message, and make sure it changes in the browser \nto verify that you're working in the right files.");
+"use strict";console.log("Hello.");var i,access_token=void 0,dog_file=void 0,pet_names=document.querySelectorAll(".pet-name"),showDogs=function(){console.log("showDogs function");for(i=0;i<dog_file.length;i++){var o=dog_file[i].name,e=void 0;for(e=0;e<pet_names.length;e++)pet_names[e].innerHTML+="Hello, my name is "+o}},goGetDogs=function(){console.log("goGetDogs function"),axios.get("http://circuslabs.net/proxies/petfinder/?endpoint=animals?type=dog&token="+access_token).then(function(o){dog_file=o.data.animals,console.log(dog_file)}).then(showDogs).catch(function(o){console.log(o)}).then(function(){})};axios.get("http://circuslabs.net/proxies/petfinder/?endpoint=oauth2/token").then(function(o){access_token=o.data.access_token,console.log(o.data.access_token)}).then(goGetDogs).catch(function(o){console.log(o)}).then(function(){});
 //# sourceMappingURL=main.js.map
