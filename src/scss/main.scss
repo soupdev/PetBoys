@@ -109,7 +109,7 @@ button{
 	display: flex;
 	flex-direction: column;
 	
-	.adoption-card{
+	.adoption-file{
 		display: flex;
 		flex-direction: column-reverse;
 		justify-content: space-between;
@@ -120,32 +120,28 @@ button{
 			width:100%;
 		
 			.pet-info{
+				width:100%;
 				line-height: 1.4em;
 				margin: 3%;
 				max-width: 95%;
-				background-color: lightyellow;
+				background-color: white;
 				display: flex;
 				flex-direction: column;
 
-				p{
-					margin: 2%;
+				.pet-desc{
+					width:95%;
+					margin: 2% auto;
 				}
 
 				.pet-name{
+					font-size:1.4em;
 					font-weight: bold;
-					margin: 2%;
-					width: 20%;
-					background-color: limegreen;
+					padding: 2%;
+					width: 100%;
+					background-color: $pbTeal;
 				}
 			}
-		
-			.pet-special{
-				width: 100%;
-				background-color: $pbTeal;
-				display: flex;
-				justify-content: center;
 
-			}
 		}		
 
 		.adoption-photo{
@@ -153,34 +149,17 @@ button{
 			display: flex;
 			align-items: center;
 
-			img{
+			img.pet-img{
 				width: 100%;
 			}
 		}
 	}
 
-	.adoption-card:nth-child(even){
+	.adoption-file:nth-child(even){
 		display: flex;
 		flex-direction: column-reverse;
 	}
 
-	.card-1{
-		.adoption-photo{
-			background-color: $pbRed;
-		}
-	}
-
-	.card-2{
-		.adoption-photo{
-			background-color: $pbNavy;
-		}
-	}
-
-	.card-3{	
-		.adoption-photo{
-			background-color: $pbTeal;
-		}
-	}
 }
 
 @media#{$tablet}{
@@ -196,7 +175,7 @@ button{
 
 	.adoptions{
 	
-		.adoption-card{
+		.adoption-file{
 			display: flex;
 			flex-direction: row;
 			justify-content: space-evenly;
@@ -223,7 +202,7 @@ button{
 			}
 		}
 
-		.adoption-card:nth-child(even){
+		.adoption-file:nth-child(even){
 			display: flex;
 			flex-direction: row-reverse;
 		}
