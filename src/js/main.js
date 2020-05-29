@@ -21,6 +21,8 @@ let showDogs = function(){
         let dog_desc = dog_file[i].description;
         let dog_gender = dog_file[i].gender;
 
+        let dog_age = dog_file[i].age;
+
         let dog_size = dog_file[i].size;
         let dog_url = dog_file[i].url;
         let dog_breed = dog_file[i].breeds.primary;
@@ -30,14 +32,17 @@ let showDogs = function(){
 
         let dog_photos = dog_file[i].primary_photo_cropped;
         //console.log (dog_photos);
-        let md_dog_photo;
+        let md_no_photo;
+        let md_dog_photo_approved;
         //this is an array of photos per dog, some arrays are null
         if(dog_photos !=null){ //if the array is not empty
-            md_dog_photo = dog_photos.medium;
-            //console.log(sm_dog_photo);
-        } else{ //if array is empty, img src is default img
-            md_dog_photo = "dist/img/dog_comingSoon2.jpg";
-        }
+            md_dog_photo_approved = dog_photos.medium;
+           // console.log("these have pics", md_dog_photo_approved);
+        }else {
+            md_no_photo ;
+            console.log ("this one ",md_no_photo)          
+        }  
+      
        
         //each pet has a file (adoption card), each card has text section (adoption info) and picture section (adoption photo.
 
@@ -79,6 +84,10 @@ let showDogs = function(){
         var pet_breed = document.createElement("p");
         pet_breed.setAttribute("class" , "pet_breed");
 
+        var pet_age = document.createElement("p");
+        pet_age.setAttribute("class","pet-age");
+
+
         var pet_icon1 = document.createElement("p");
         pet_icon1.setAttribute("class", "icon"); 
         var pet_icon2 = document.createElement("p")
@@ -96,8 +105,12 @@ let showDogs = function(){
 
         var pet_photo = document.createElement("img");
         pet_photo.setAttribute("class","pet-img");
-        pet_photo.src= `${md_dog_photo}`;
+        pet_photo.src= `${md_dog_photo_approved}`;
         
+        if(pet_photo.src != `${md_dog_photo_approved}`){
+            adoption_file.className += "-hidden"; 
+        }
+
 
         //add inner data to elements 
         adopt_button.innerText = 'Learn More About ' + dog_name;
@@ -105,6 +118,7 @@ let showDogs = function(){
         pet_gender.innerText = "Gender: " + dog_gender;
         pet_size.innerText = "Size: " + dog_size;
         pet_breed.innerText = "Breed: " + dog_breed;
+        pet_age.innerText = "Age: " + dog_age;
 
         pet_icon1.innerText = "Housebroken :";
         pet_icon2.innerText = "Spayed/Neutered :";
@@ -113,6 +127,7 @@ let showDogs = function(){
         
         
         //add text divs to pet_info 
+        pet_desc.appendChild(pet_age);
         pet_desc.appendChild(pet_gender);
         pet_desc.appendChild(pet_size);
         pet_desc.appendChild(pet_breed);
@@ -144,6 +159,11 @@ let showDogs = function(){
 
         //add img to adoption_photo
         adoption_photo_container.appendChild(pet_photo);
+       
+
+
+        //remove those with no photos 
+      
 
         //add all adoption_info and adoption_photo to adoption_file
         adoption_file.appendChild(adoption_info);
