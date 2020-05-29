@@ -2,15 +2,30 @@ console.log(`Hello.`)
 let access_token; // create a variable 
 let dog_file;
 var i;
+let content_wrapper = document.querySelector("content-wrapper")
 let adoptions = document.querySelector(".adoptions");
 
+let input_zipCode = document.querySelector("#zipCode");
+let zipCode;
+
+
 //define HTML div to append elements to later 
+
+function get_parameters(){
+   zipCode = input_zipCode.value
+    console.log("button was clicked", zipCode )
+
+
+    goGetDogs();
+}
 
 let showDogs = function(){
     
     console.log('showDogs function');
    // console.log(dog_file[0].name);
-    let intro = "Hello, my name is ";
+
+   //create a container for adoptions
+   let adoption_container = document.createElement("section");
     for (i = 0; i < dog_file.length; i++){
         //i=0; so long as i's value is shorter than the lentgh of the array; increase the value of i until finished
         
@@ -37,16 +52,15 @@ let showDogs = function(){
            // console.log("these have pics", md_dog_photo_approved);
         }else {
             md_no_photo = "dist/img/dog_comingSoon1.png" ;
-            console.log ("this one ",md_no_photo)          
+           // console.log ("this one will be removed ",md_no_photo)          
         }  
 
         let dog_attributes = dog_file[i].attributes
-        console.log(dog_attributes);
+        let HB = dog_attributes.house_trained;
+        let SC = dog_attributes.shots_current;
+        let SN = dog_attributes.spayed_neutered;
+        let SPN = dog_attributes.special_needs;
  
-        
-     
-      
-       
         //each pet has a file (adoption card), each card has text section (adoption info) and picture section (adoption photo.
 
         //create divs and add class names
@@ -102,6 +116,7 @@ let showDogs = function(){
 
         var pet_url = document.createElement("a");
         pet_url.setAttribute("class", "pet-url");
+        pet_url.setAttribute("target", "_blank")
         pet_url.href= dog_url;
 
         var adopt_button = document.createElement("button");
@@ -119,15 +134,15 @@ let showDogs = function(){
         //add inner data to elements 
         adopt_button.innerHTML = 'Learn More About ' + "<br>" + dog_name;
         pet_name.innerText = dog_name; 
-        pet_gender.innerText = "Gender: " + dog_gender;
-        pet_size.innerText = "Size: " + dog_size;
-        pet_breed.innerText = "Breed: " + dog_breed;
-        pet_age.innerText = "Age: " + dog_age;
+        pet_gender.innerHTML = "Gender: " + "<span>" + dog_gender  + "</span>";
+        pet_size.innerHTML = "Size: " + "<span>" + dog_size + "</span>";
+        pet_breed.innerHTML = "Breed: " + "<span>" + dog_breed  + "</span>";
+        pet_age.innerHTML = "Age: " + "<span>" + dog_age  + "</span>";
 
-        pet_icon1.innerText = "Housebroken :";
-        pet_icon2.innerText = "Spayed/Neutered :";
-        pet_icon3.innerText = "Vaccinations :";
-        pet_icon4.innerText = "Special Needs: ";
+        pet_icon1.innerText = "Housebroken:" + " " + HB;
+        pet_icon2.innerText = "Spayed/Neutered:"+ " " + SN;
+        pet_icon3.innerText = "Vaccinations:"+ " " + SC;
+        pet_icon4.innerText = "Special Needs: "+ " " + SPN;
         
         
         //add text divs to pet_info 
@@ -175,27 +190,21 @@ let showDogs = function(){
        
         //add adoption card to HTML document
         adoptions.appendChild(adoption_file);
-
-
-
+        
     }
-   
-    // document.getElementsByClassName(".adoptions").innerHtml += intro;
-
-    // let x;
-    // for (x=0; x < adoption_card.length;x++){
-    //     adoption_card[x].innerHTML += intro;
-    // }
-
-    //here is where I make divs, classes, etc and append to html 
-
+    
+    adoptions.style ="display:flex"
 }
 
 let goGetDogs = function(){
     console.log('goGetDogs function')
 
+    let api_call = 'http://circuslabs.net/proxies/petfinder/?endpoint=animals?type=dog&token='
+
+    let param_zipCode = '&location='+zipCode;
+
     axios
-        .get('http://circuslabs.net/proxies/petfinder/?endpoint=animals?type=dog&token=' + access_token) // a request for the info from the api
+        .get( api_call + access_token + param_zipCode) // a request for the info from the api
         .then(function (response) {
             // handle success
             dog_file = response.data.animals; //.data.access_token; // store the access inside the variable that's on the global scope 
@@ -218,7 +227,7 @@ axios //the javascript library that makes the request
         access_token = response.data.access_token; // store the access inside the variable that's on the global scope 
         console.log(response.data.access_token); //show inside object > data > access token 
     })
-    .then(goGetDogs) //execute named function stored in the variable
+    .then(get_parameters) //execute named function stored in the variable
     .catch(function (error) {
         // handle error
         console.log(error);

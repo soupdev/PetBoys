@@ -80,26 +80,27 @@ header, footer{
 
 }
 
-button{
+button,.button{
 	width: 80%;
 	height: 50px;
 	margin: 2%;
 	border-radius: 25px;
 	cursor: pointer;
-	background-color: $pbTeal;
-	color:$pbNavy;
+	background-color: $pbBlue;
+	color:white;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	font-size: 15px;
-	font-weight: bold;
+	font-size: 1rem;
+	
 	border:none;
 }
 
-button:hover{
+button:hover,.button:hover{
 	background-color: $pbNavy;
-	color:#ffffff;
+	font-weight: bold;
 }
+
 
 
 .page-title{
@@ -110,110 +111,156 @@ button:hover{
 	color: $pbRed;
 }
 
-.adoptions{
-	width: 95%;
-	margin: 2% auto;
-	// background-color: lightyellow;
-	// border: 1px solid black;
-	height: auto;
+.content-wrapper{
 	display: flex;
 	flex-direction: column;
-	
 
-	
-	.adoption-file{
+	.search-window{
+		background-color: $pbTeal;
+		width: 100%;
+		height: 100vh;
 		display: flex;
-		flex-direction: column-reverse;
-		justify-content: space-between;
-		margin: 2%;
-		background-color: $pbBlue;
+		flex-direction: column;
+		justify-content: center;
+		background-image: url("../img/puppy-bckrnd.jpg");
+		background-size: cover;
 
-
-
-		.adoption-info{
-			width:100%;
+		#search-form{
 			height: 50%;
-		
-			.pet-info{
-				width:100%;
-				
-				line-height: 1.4em;
-				//margin: 3%;
-				//max-width: 95%;
-				border: 2px solid $pbTeal;
-				background-color: white;
+			width: 90%;
+			margin: 2% auto;
+			background-color: $pbO-Navy;
+			border-radius: 15px;
+			color:white;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-evenly;
+			align-items: center;
+
+			.search-input{
+				//background-color: yellow;
+				width: 50%;
 				display: flex;
 				flex-direction: column;
-				justify-content: space-between;
-
-				.pet-desc{
-					width:95%;
-					margin: 2% auto;
-					display: flex;
-					flex-direction: column;
-					justify-content: space-evenly;
-
-					p{
-						font-size:1.2em;
-						margin: 2%;
-					}
-				}
-
-				.pet-icons{
-					width: 100%;
-					display: flex;
-					flex-wrap: wrap;
-					flex-direction: row;
-					justify-content: space-evenly;
-					border-top: 1px solid black;
-
-					.icon{
-						margin: 2%;
-					}
-				}
-
-				.pet-name{
-					font-size:1.6em;
-					font-weight: bold;
-					padding: 2%;
-					width: 100%;
-					background-color: $pbTeal;
-				}
-
-				.pet-url {
-					text-decoration: none;
-					display: flex;
-					justify-content: center;
-				}
 			}
-
-		}		
-
-		.adoption-photo-container{
-			width: 100%;
-			height: 50%;
-			height: auto;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			// background-color: white;
-			// border: 3px dotted $pbTeal;
-
-
-			.pet-img{
-				width: 100%;
-				margin: 2% auto;
-				object-fit: contain;
-			}
-
+			
 		}
 	}
- 
-   .adoption-file-hidden{
-	   background-color: linen;
-	   display: none;
-   }
 
+	.adoptions{
+		// width: 95%;
+		// margin: 2% auto;
+		// background-color: lightyellow;
+		// border: 1px solid black;
+		height: auto;
+		display: flex;
+		flex-direction: column;
+		border: 2px solid $pbBlue;
+		border-left: none;
+		
+		
+
+		
+		.adoption-file{
+			display: flex;
+			flex-direction: column-reverse;
+			justify-content: space-between;
+			margin: 2%;
+			background-color: $pbBlue;
+
+
+
+			.adoption-info{
+				width:100%;
+				height: 50%;
+			
+				.pet-info{
+					width:100%;
+					
+					line-height: 1.4em;
+					//margin: 3%;
+					//max-width: 95%;
+					border: 2px solid $pbBlue;
+					background-color: white;
+					display: flex;
+					flex-direction: column;
+					justify-content: space-between;
+
+					.pet-desc{
+						width:95%;
+						margin: 2% auto;
+						display: flex;
+						flex-direction: column;
+						justify-content: space-evenly;
+
+						p{
+							font-size:1.2em;
+							margin: 2%;
+							color: $pbNavy;
+						}
+
+						span{
+							color:$pbBlue;
+						}
+					}
+
+					.pet-icons{
+						width: 100%;
+						display: flex;
+						flex-wrap: wrap;
+						flex-direction: row;
+						justify-content: space-evenly;
+						border-top: 1px solid black;
+
+						.icon{
+							margin: 2%;
+						}
+					}
+
+					.pet-name{
+						font-size:1.6em;
+						font-weight: bold;
+						padding: 2%;
+						width: 100%;
+						background-color: $pbTeal;
+						color:$pbNavy;
+					}
+
+					.pet-url {
+						text-decoration: none;
+						display: flex;
+						justify-content: center;
+					}
+				}
+
+			}		
+
+			.adoption-photo-container{
+				width: 100%;
+				height: 50%;
+				height: auto;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				// background-color: white;
+				// border: 3px dotted $pbTeal;
+
+
+				.pet-img{
+					width: 100%;
+					margin: 2% auto;
+					object-fit: contain;
+				}
+
+			}
+		}
+	
+		.adoption-file-hidden{
+			background-color: linen;
+			display: none;
+		}
+
+	}
 }
 
 @media#{$tablet}{
@@ -227,40 +274,45 @@ button:hover{
 		font-size: 3rem;
 	}
 
-	.adoptions{
+	.content-wrapper{
 
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		justify-content:space-evenly;
-	
-		.adoption-file{
-			width:45%;
+		.adoptions{
+
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content:space-evenly;
+			height: 100vh;
+			overflow: auto;
 		
+			.adoption-file{
+				width:45%;
+			
 
-			.adoption-info{
-				display: flex;
-				flex-direction: row;
-				justify-content: center;
-				.pet-info{
-					//margin: 3%;
-					height: auto;
+				.adoption-info{
+					display: flex;
+					flex-direction: row;
+					justify-content: center;
+					.pet-info{
+						//margin: 3%;
+						height: auto;
+					}
 				}
-			}
 
-			.adoption-photo-container{
-				//height: 100%;
-				//max-height: 300px;
-				display: flex;
-				justify-content: center;
-
-				.pet-img{
-					width: 100%;
+				.adoption-photo-container{
+					//height: 100%;
 					//max-height: 300px;
+					display: flex;
+					justify-content: center;
+
+					.pet-img{
+						width: 100%;
+						//max-height: 300px;
+					}
 				}
 			}
-		}
 
+		}
 	}
 
 }
@@ -285,42 +337,54 @@ button:hover{
 	.page-title{
 		font-size: 4rem;
 	}
-	
-	.adoptions{
-		max-width: 85vw;
-		height: 70vh;
-		overflow: auto;
 
-		.adoption-file{
-			width:45%;
-			flex-direction: row;
-
-			.adoption-info{
-				height: auto;
-
-				.pet-info{
-					border-right: none;
-
-				}
-			}
-
-			.adoption-photo-container{
-				background-image: url("../img/polka1.jpg");
-				background-size: cover;
-				.pet-img{
-					width: 85%;
-					//max-height: 300px;
-				}
-			}
+	.content-wrapper{
+		display: flex;
+		flex-direction: row;
+		.search-window{
+			//width:70%;
+			margin: 2% auto;
 		}
+		.adoptions{
+			margin: 2% auto;
+			max-width: 85vw;
+			height: 100vh;
+			overflow: auto;
+			display: none;
+			background-image: url("../img/paw-print1.jpg");
+			background-size: cover;
+
+			.adoption-file{
+				width:45%;
+				flex-direction: row;
+				border: 1px solid $pbNavy;
+				.adoption-info{
+					height: auto;
+
+					.pet-info{
+						border-right: none;
+
+					}
+				}
+
+				.adoption-photo-container{
+				
+					// background-image: url("../img/polka1.jpg");
+					// background-size: cover;
+					
+					.pet-img{
+						width: 85%;
+						//max-height: 300px;
+					}
+				}
+			}
 
 
+		}
 	}
 	
+	
 }
-
-
-
 
 /* 2. Content ================================= */
 
