@@ -37,13 +37,49 @@
 			<section class="content-wrapper">
 				<section class="search-window"> 
 					<form id="search-form">
-						<div class="search-input">
-							<label for="zipCode">Zip Code: </label><br>
-							<input type="text" id="zipCode" name="zipCode">
-							<input class ="button" type="button" name="buttony" id="buttony" value="Find Your Buddy" onclick="get_parameters()">
+						<p>FIND YOUR BUDDY</p>
+						<div class="search-input zip">
+							<label for="zipCode"><p>Zip Code:</p></label>
+							<input type="text" id="zipCode" name="zipCode">			
 						</div>
 						
+						<fieldset>
+							<legend>Choose your dog's gender:</legend>
+							<div>
+								<input type="checkbox" id="male" name="gender" value="male" checked>
+								<label for="male">Boy</label>
+							</div>
+							<div>
+								<input type="checkbox" id="female" name="gender" value="female">
+								<label for="female">Girl</label>
+							</div>
+						</fieldset>
+
+						<fieldset>
+							<legend>Choose your dog's age:</legend>
+							<div>
+								<input type="checkbox" id="baby" name="pup_age" value="baby" checked>
+								<label for="baby">Baby</label>
+							</div>
+							<div>
+								<input type="checkbox" id="young" name="pup_age" value="young">
+								<label for="young">Young</label>
+							</div>
+							<div>
+								<input type="checkbox" id="adult" name="pup_age" value="adult">
+								<label for="adult">Adult</label>
+							</div>
+							<div>
+								<input type="checkbox" id="senior" name="pup_age" value="senior">
+								<label for="senior">Senior</label>
+							</div>
+						</fieldset>
+
+						<input class ="button" type="button" name="buttony" id="buttony" value="Find Your Buddy" onclick="get_parameters()">
 					</form>
+
+
+
 				</section>
 				<section class="adoptions">
 				</section>

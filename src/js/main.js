@@ -1,21 +1,29 @@
 console.log(`Hello.`)    
+var i;
 let access_token; // create a variable 
 let dog_file;
-var i;
 let content_wrapper = document.querySelector("content-wrapper")
 let adoptions = document.querySelector(".adoptions");
-
 let input_zipCode = document.querySelector("#zipCode");
 let zipCode;
+let petGender;
+let input_petGender = document.querySelector("[name=pup_gender]");
+
+function clearResults(){
+    console.log("cleared results", adoptions);
+    adoptions.innerHTML = " ";
+}
 
 
 //define HTML div to append elements to later 
 
 function get_parameters(){
    zipCode = input_zipCode.value
-    console.log("button was clicked", zipCode )
 
+   //petGender = input_petGender.value
+    console.log("button was checked", petGender )
 
+    clearResults();    
     goGetDogs();
 }
 
@@ -30,18 +38,23 @@ let showDogs = function(){
         //i=0; so long as i's value is shorter than the lentgh of the array; increase the value of i until finished
         
         //store pet data from dog_file into vars
-            //each loop, var = value of the object in the array
-        //console.log(dog_name);
+        //each loop, var = value of the object in the array
+      
+       //dog description
         let dog_name = dog_file[i].name;
         let dog_desc = dog_file[i].description;
         let dog_gender = dog_file[i].gender;
-
         let dog_age = dog_file[i].age;
-
         let dog_size = dog_file[i].size;
         let dog_url = dog_file[i].url;
         let dog_breed = dog_file[i].breeds.primary;
-        
+
+        //dog location
+        let dog_city = dog_file[i].contact.address.city;
+        let dog_state = dog_file[i].contact.address.state;
+        let dog_zip = dog_file[i].contact.address.postcode;
+
+       //dog photos
         let dog_photos = dog_file[i].primary_photo_cropped;
         //console.log (dog_photos);
         let md_no_photo;
@@ -55,11 +68,36 @@ let showDogs = function(){
            // console.log ("this one will be removed ",md_no_photo)          
         }  
 
+        //attributes
         let dog_attributes = dog_file[i].attributes
         let HB = dog_attributes.house_trained;
         let SC = dog_attributes.shots_current;
         let SN = dog_attributes.spayed_neutered;
         let SPN = dog_attributes.special_needs;
+
+        if(HB){
+            HB = "dist/img/green_check.png";
+        }else{
+            HB ="dist/img/red_xmark.png";
+        }
+
+        if(SC){
+            SC = "dist/img/green_check.png";
+        }else{
+            SC = "dist/img/red_xmark.png";
+        }
+
+        if(SN){
+            SN = "dist/img/green_check.png";
+        }else{
+            SN = "dist/img/red_xmark.png";
+        }
+
+        if(SPN){
+            SPN = "dist/img/green_check.png";
+        }else{
+            SPN = "dist/img/red_xmark.png";
+        }
  
         //each pet has a file (adoption card), each card has text section (adoption info) and picture section (adoption photo.
 
@@ -91,28 +129,32 @@ let showDogs = function(){
         
         var pet_desc = document.createElement("p");
         pet_desc.setAttribute("class","pet-desc");
-        
-        var pet_gender = document.createElement("p");
-        pet_gender.setAttribute("class" , "pet_gender");
-
-        var pet_size = document.createElement("p");
-        pet_size.setAttribute("class" , "pet_size");
-
-        var pet_breed = document.createElement("p");
-        pet_breed.setAttribute("class" , "pet_breed");
-
+     
         var pet_age = document.createElement("p");
         pet_age.setAttribute("class","pet-age");
+        
+        var pet_gender = document.createElement("p");
+        pet_gender.setAttribute("class" , "pet-gender");
+
+        var pet_size = document.createElement("p");
+        pet_size.setAttribute("class" , "pet-size");
+
+        var pet_breed = document.createElement("p");
+        pet_breed.setAttribute("class" , "pet-breed");
+
+        var pet_address = document.createElement("p")
+        pet_address.setAttribute("class","pet-location")
 
 
-        var pet_icon1 = document.createElement("p");
-        pet_icon1.setAttribute("class", "icon"); 
-        var pet_icon2 = document.createElement("p")
-        pet_icon2.setAttribute("class", "icon");
-        var pet_icon3 = document.createElement("p")
-        pet_icon3.setAttribute("class", "icon");
-        var pet_icon4 = document.createElement("p")
-        pet_icon4.setAttribute("class", "icon");
+
+        var pet_HB = document.createElement("p");
+        pet_HB.setAttribute("class", "icon-HB icons"); 
+        var pet_SN = document.createElement("p")
+        pet_SN.setAttribute("class", "icon-SN icons");
+        var pet_SC = document.createElement("p")
+        pet_SC.setAttribute("class", "icon-SC icons");
+        var pet_SPN = document.createElement("p")
+        pet_SPN.setAttribute("class", "icon-SPN icons");
 
         var pet_url = document.createElement("a");
         pet_url.setAttribute("class", "pet-url");
@@ -138,11 +180,12 @@ let showDogs = function(){
         pet_size.innerHTML = "Size: " + "<span>" + dog_size + "</span>";
         pet_breed.innerHTML = "Breed: " + "<span>" + dog_breed  + "</span>";
         pet_age.innerHTML = "Age: " + "<span>" + dog_age  + "</span>";
+        pet_address.innerHTML = "Location: "+ "<br>" + "<span>" + dog_city  + "," + " " + dog_state  +  " "  + dog_zip  + "</span>";
 
-        pet_icon1.innerText = "Housebroken:" + " " + HB;
-        pet_icon2.innerText = "Spayed/Neutered:"+ " " + SN;
-        pet_icon3.innerText = "Vaccinations:"+ " " + SC;
-        pet_icon4.innerText = "Special Needs: "+ " " + SPN;
+        pet_HB.innerHTML = "Housebroken:" + " " + "<img class='icon' src=" + HB + ">";
+        pet_SN.innerHTML = "Spayed/Neutered:"+ " " +"<img class='icon' src=" + SN + ">";
+        pet_SC.innerHTML = "Vaccinations:"+ " " +"<img class='icon' src=" + SC + ">";
+        pet_SPN.innerHTML = "Special Needs: "+ " " + "<img class='icon' src=" + SPN + ">";
         
         
         //add text divs to pet_info 
@@ -150,12 +193,13 @@ let showDogs = function(){
         pet_desc.appendChild(pet_gender);
         pet_desc.appendChild(pet_size);
         pet_desc.appendChild(pet_breed);
+        pet_desc.appendChild(pet_address);
 
         //add icon divs to pet_icons
-        pet_icons.appendChild(pet_icon1);
-        pet_icons.appendChild(pet_icon2);
-        pet_icons.appendChild(pet_icon3);
-        pet_icons.appendChild(pet_icon4);
+        pet_icons.appendChild(pet_HB);
+        pet_icons.appendChild(pet_SN);
+        pet_icons.appendChild(pet_SC);
+        //pet_icons.appendChild(pet_SPN);
 
         //wrap button in <a> tag 
         pet_url.appendChild(adopt_button);
@@ -194,6 +238,7 @@ let showDogs = function(){
     }
     
     adoptions.style ="display:flex"
+
 }
 
 let goGetDogs = function(){

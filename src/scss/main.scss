@@ -84,14 +84,15 @@ button,.button{
 	width: 80%;
 	height: 50px;
 	margin: 2%;
-	border-radius: 25px;
+	padding: 2%;
+	//border-radius: 25px;
 	cursor: pointer;
 	background-color: $pbBlue;
 	color:white;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	font-size: 1rem;
+	font-size: .8rem;
 	
 	border:none;
 }
@@ -138,12 +139,27 @@ button:hover,.button:hover{
 			align-items: center;
 
 			.search-input{
-				//background-color: yellow;
-				width: 50%;
+				background-color: lightcoral;
+				width: 60%;
+				max-width: 250px;
 				display: flex;
-				flex-direction: column;
+				flex-direction: row;
+				flex-wrap: wrap;
+				justify-content: space-evenly;
+
+				p{
+					color:yellow;
+					font-size: 20px;
+				}
+
+				#zipCode{
+					//width:150px;
+				}
 			}
 			
+			.button{
+				width: 50%;
+			}
 		}
 	}
 
@@ -158,8 +174,6 @@ button:hover,.button:hover{
 		border: 2px solid $pbBlue;
 		border-left: none;
 		
-		
-
 		
 		.adoption-file{
 			display: flex;
@@ -194,9 +208,10 @@ button:hover,.button:hover{
 						justify-content: space-evenly;
 
 						p{
-							font-size:1.2em;
+							font-size:1em;
 							margin: 2%;
 							color: $pbNavy;
+							font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 						}
 
 						span{
@@ -204,27 +219,40 @@ button:hover,.button:hover{
 						}
 					}
 
-					.pet-icons{
-						width: 100%;
-						display: flex;
-						flex-wrap: wrap;
-						flex-direction: row;
-						justify-content: space-evenly;
-						border-top: 1px solid black;
-
-						.icon{
-							margin: 2%;
-						}
-					}
-
+					
 					.pet-name{
-						font-size:1.6em;
+						font-size:1.4em;
 						font-weight: bold;
 						padding: 2%;
 						width: 100%;
 						background-color: $pbTeal;
 						color:$pbNavy;
 					}
+
+					.pet-icons{
+						
+						width: 100%;
+						display: flex;
+						flex-wrap: wrap;
+						flex-direction: column;
+						justify-content: space-evenly;
+						border-top: 1px solid black;
+						font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+
+						.icons{
+							margin:3%;
+							display: flex;
+							align-items: center;
+							margin-top:2%;
+						}
+
+						.icon{
+							width:14px;
+							margin: 2%;
+						}
+					}
+
 
 					.pet-url {
 						text-decoration: none;
@@ -256,7 +284,7 @@ button:hover,.button:hover{
 		}
 	
 		.adoption-file-hidden{
-			background-color: linen;
+			//background-color: linen;
 			display: none;
 		}
 
