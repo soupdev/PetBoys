@@ -27,21 +27,24 @@ let showDogs = function(){
         let dog_url = dog_file[i].url;
         let dog_breed = dog_file[i].breeds.primary;
         
-
-
-
         let dog_photos = dog_file[i].primary_photo_cropped;
         //console.log (dog_photos);
         let md_no_photo;
         let md_dog_photo_approved;
         //this is an array of photos per dog, some arrays are null
         if(dog_photos !=null){ //if the array is not empty
-            md_dog_photo_approved = dog_photos.medium;
+            md_dog_photo_approved = dog_photos.full;
            // console.log("these have pics", md_dog_photo_approved);
         }else {
-            md_no_photo ;
+            md_no_photo = "dist/img/dog_comingSoon1.png" ;
             console.log ("this one ",md_no_photo)          
         }  
+
+        let dog_attributes = dog_file[i].attributes
+        console.log(dog_attributes);
+ 
+        
+     
       
        
         //each pet has a file (adoption card), each card has text section (adoption info) and picture section (adoption photo.
@@ -109,11 +112,12 @@ let showDogs = function(){
         
         if(pet_photo.src != `${md_dog_photo_approved}`){
             adoption_file.className += "-hidden"; 
+            //stylng for .adoption-file-hidden set to display:none;
         }
 
 
         //add inner data to elements 
-        adopt_button.innerText = 'Learn More About ' + dog_name;
+        adopt_button.innerHTML = 'Learn More About ' + "<br>" + dog_name;
         pet_name.innerText = dog_name; 
         pet_gender.innerText = "Gender: " + dog_gender;
         pet_size.innerText = "Size: " + dog_size;
@@ -171,6 +175,8 @@ let showDogs = function(){
        
         //add adoption card to HTML document
         adoptions.appendChild(adoption_file);
+
+
 
     }
    
