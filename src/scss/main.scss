@@ -30,6 +30,11 @@ body {
 	font-family:$fontMain;
 }
 
+p{
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	margin: 2% auto;
+}
+
 footer{
 	height: 15vh;
 }
@@ -38,12 +43,12 @@ header, footer{
 	background-color:$pbBlue;
 	width:100%;
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	flex-direction: row;
+	justify-content: space-between;
 	align-items: center;
 
 	.logo-box{
-		width: 30%;
+		width: 10%;
 		.logo{
 			width: 100%;
 			img{
@@ -81,36 +86,27 @@ header, footer{
 }
 
 button,.button{
-	width: 80%;
+	width: 100%;
 	height: 50px;
 	margin: 2%;
 	padding: 2%;
 	//border-radius: 25px;
 	cursor: pointer;
 	background-color: $pbBlue;
-	color:white;
+	color:whitesmoke;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	font-size: .8rem;
-	
+	font-size: 1rem;
 	border:none;
 }
 
 button:hover,.button:hover{
-	background-color: $pbNavy;
+	background-color: $pbTeal;
+	color: $pbNavy;
 	font-weight: bold;
 }
 
-
-
-.page-title{
-	display: flex;
-	justify-content: center;
-	font-size: 2rem;
-	margin: 2% auto;
-	color: $pbRed;
-}
 
 .content-wrapper{
 	display: flex;
@@ -123,23 +119,73 @@ button:hover,.button:hover{
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		background-image: url("../img/puppy-bckrnd.jpg");
+		background-image: url("../img/spot.jpg");
 		background-size: cover;
+		background-position-x: center;
 
 		#search-form{
-			height: 50%;
+			fieldset{
+				display: none;
+			}
+
+			height: 75%;
 			width: 90%;
 			margin: 2% auto;
 			background-color: $pbO-Navy;
-			border-radius: 15px;
+			border-radius: 2%;
 			color:white;
 			display: flex;
 			flex-direction: column;
 			justify-content: space-evenly;
 			align-items: center;
 
+			.special-offer{
+				display: flex;
+				flex-direction: column;
+				justify-content: space-evenly;
+				align-items: center;
+				width: 80%;
+				height: 60%;
+				text-align: center;
+
+				.search-logo{
+
+					width: 275px;
+				}
+				
+				.page-title{
+					display: flex;
+					justify-content: center;
+					font-size: 2rem;
+					margin: 2% auto;
+					color: $pbTeal;
+				}
+		
+
+				.so-copy{
+					p{
+						text-align: left;
+						line-height: 1.4rem;
+						font-size: 1.1rem;
+					}
+				}
+
+				ul{
+					text-align: left;
+					list-style: circle;
+					li{
+						color: $pbTeal;
+						margin: 5%;
+						font-size: 1.4rem;
+						line-height: 1.5rem;
+					}
+
+				}
+			}
+		
 			.search-input{
-				background-color: lightcoral;
+				//background-color: lightcoral;
+				margin-top:5%;
 				width: 60%;
 				max-width: 250px;
 				display: flex;
@@ -149,7 +195,17 @@ button:hover,.button:hover{
 
 				p{
 					color:yellow;
-					font-size: 20px;
+					font-weight: bold;
+					font-size: 1.2rem;
+					
+				}
+
+				.zip{					
+					.zip-label{
+						width:50%;
+						height: 30px;
+					}
+
 				}
 
 				#zipCode{
@@ -164,10 +220,8 @@ button:hover,.button:hover{
 	}
 
 	.adoptions{
-		// width: 95%;
-		// margin: 2% auto;
-		// background-color: lightyellow;
-		// border: 1px solid black;
+		background-color: white;
+		background-image: url("../img/paw-2.png");
 		height: auto;
 		display: flex;
 		flex-direction: column;
@@ -180,7 +234,8 @@ button:hover,.button:hover{
 			flex-direction: column-reverse;
 			justify-content: space-between;
 			margin: 2%;
-			background-color: $pbBlue;
+			background-color: $pbNavy;
+			border-radius: 2%;
 
 
 
@@ -189,12 +244,12 @@ button:hover,.button:hover{
 				height: 50%;
 			
 				.pet-info{
-					width:100%;
-					
+					width:90%;
+					margin: 5%;
+
 					line-height: 1.4em;
-					//margin: 3%;
 					//max-width: 95%;
-					border: 2px solid $pbBlue;
+					//border: 2px solid $pbBlue;
 					background-color: white;
 					display: flex;
 					flex-direction: column;
@@ -225,7 +280,7 @@ button:hover,.button:hover{
 						font-weight: bold;
 						padding: 2%;
 						width: 100%;
-						background-color: $pbTeal;
+						background-color: $pbBlue;
 						color:$pbNavy;
 					}
 
@@ -298,15 +353,21 @@ button:hover,.button:hover{
 		}
 	}
 
-	.page-title{
-		font-size: 3rem;
-	}
+	// .page-title{
+	// 	font-size: 3rem;
+	// }
 
 	.content-wrapper{
+		.search-window{
 
+			margin: none;
+			#search-form{
+				width:50%;
+				margin: auto 2%;
+			}
+		}
 		.adoptions{
-
-			display: flex;
+			display: none;
 			flex-direction: row;
 			flex-wrap: wrap;
 			justify-content:space-evenly;
@@ -314,10 +375,12 @@ button:hover,.button:hover{
 			overflow: auto;
 		
 			.adoption-file{
-				width:45%;
+				width:80%;
+				flex-direction: row;
 			
 
 				.adoption-info{
+					height: 100%;
 					display: flex;
 					flex-direction: row;
 					justify-content: center;
@@ -334,7 +397,7 @@ button:hover,.button:hover{
 					justify-content: center;
 
 					.pet-img{
-						width: 100%;
+						width: 90%;
 						//max-height: 300px;
 					}
 				}
@@ -362,24 +425,30 @@ button:hover,.button:hover{
 		}
 	}
 
-	.page-title{
-		font-size: 4rem;
-	}
+	// .page-title{
+	// 	font-size: 4rem;
+	// }
+
+
 
 	.content-wrapper{
 		display: flex;
 		flex-direction: row;
+		
 		.search-window{
-			//width:70%;
-			margin: 2% auto;
+			//width:10%;
+			//margin: 2% auto;
+
+			#search-form{
+				//width:30%;
+			}
 		}
 		.adoptions{
-			margin: 2% auto;
+			//margin: 2% auto;
 			max-width: 85vw;
 			height: 100vh;
 			overflow: auto;
 			display: none;
-			background-image: url("../img/paw-print1.jpg");
 			background-size: cover;
 
 			.adoption-file{
