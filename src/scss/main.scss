@@ -494,7 +494,7 @@ button:hover,.button:hover{
 
 
 
-.content-wrapper-page-3-contactUs{
+.content-wrapper-page-4-contactUs{
 	display: flex;
 	flex-direction: column;
 
@@ -613,21 +613,8 @@ button:hover,.button:hover{
 }
 
 @media#{$tablet}{
-	header{
-		.logo-box{
-			width: 15%;
-		}
 
-		nav{
-			width: 50%;
-		}
-	}
-
-	// .page-title{
-	// 	font-size: 3rem;
-	// }
-
-	.content-wrapper-page-3-contactUs{
+	.content-wrapper-page-4-contactUs{
 		.search-window{
 
 			margin: none;
@@ -642,29 +629,8 @@ button:hover,.button:hover{
 }
 
 @media#{$XLdesktop}{
-	header{
-		.logo-box{
-			width: 10%;
-		}
 
-		nav{
-			width: 50%;
-
-			ul{
-				li{
-					font-size: 1.5rem;
-				}
-			}
-		}
-	}
-
-	// .page-title{
-	// 	font-size: 4rem;
-	// }
-
-
-
-	.content-wrapper-page-3-contactUs{
+	.content-wrapper-page-4-contactUs{
 		display: flex;
 		flex-direction: row;
 		
