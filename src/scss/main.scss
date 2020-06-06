@@ -107,7 +107,63 @@ button:hover,.button:hover{
 	font-weight: bold;
 }
 
+.content-wrapper-page-1-home{
+	display: flex;
+	flex-direction: column;
+	.hero{
+		width: 100%;
+		height: 25vh;
+		//background-color: yellow;
+		background-image: url("/dist/img/spot.jpg") ;
+		background-size: cover;
+		background-position: center;
 
+		.hero-welcome{
+			background-color: green;
+			width:50%;
+			margin:5%;
+			h1{
+				font-size: 2rem;
+				text-align: center;
+			}
+			button{
+				margin:5% auto;
+				width: 80%;
+			}
+		}
+	}
+	.about-us{
+		width: 90%;
+		height: 25vh;
+		margin: 2% auto;
+		display:flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		//background-color: whi;
+	}
+
+	.services{
+		width: 100%;
+		height: 25vh;
+		background-color: $pbTeal;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+
+		.service-box{
+			background-color: yellow;
+			width:33%
+		}
+	}
+	.adopt{
+		width: 100%;
+		height: 25vh;
+		background-color: plum;
+	}
+	
+}
 
 /* 2. ADPOPTIONS ================================= */
 
