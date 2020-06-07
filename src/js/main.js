@@ -15,7 +15,8 @@ function clearResults(){
 }
 
 
-//define HTML div to append elements to later 
+//make breakpoints with if statements and add smooth scroll with window.to
+//min height-75%;
 
 function get_parameters(){
    zipCode = input_zipCode.value
