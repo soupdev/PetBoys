@@ -33,7 +33,7 @@ body {
 }
 
 p{
-	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-family: Arial, Helvetica, sans-serif;
 	margin: 2% auto;
 }
 
@@ -80,6 +80,9 @@ header, footer{
 				}
 
 				a:hover{
+					color:wheat;
+				}
+				a.active{
 					color:$pbTeal;
 				}
 			}
@@ -140,7 +143,7 @@ button:hover,.button:hover{
 		}
 
 		nav{
-			width: 50%;
+			width: 70%;
 		}
 
 		.social-box{
@@ -197,7 +200,7 @@ button:hover,.button:hover{
 	.hero{
 		width: 100%;
 		height: 40vh;
-		background-color: $pbTeal;
+		background-color: $pbNavy;
 		background-image: url("/dist/img/spot.jpg") ;
 		background-size: cover;
 		background-position: center;
@@ -558,26 +561,416 @@ button:hover,.button:hover{
 
 }
 
+/* 2. Services ================================= */
+
+.content-wrapper-page-2-services{
+	
+	display: flex;
+	flex-direction: column;
+	.banner{
+		width:100%;
+		height: 10px;
+		background-color: $pbTeal;
+		color:$pbTeal;
+	}
+	.hero{
+		width: 100%;
+		height: 30vh;
+		background-color: $pbNavy;
+		background-image: url("/dist/img/smile-dog.jpg") ;
+		background-size: cover;
+		background-position: center;
+
+		.hero-welcome{
+			background-color: $pbO-Navy;
+			border-radius: 10px;
+			width:50%;
+			min-height: 75%;
+			margin:5%;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-evenly;
+			align-items: center;
+			color: $pbTeal;
+			border: 3px solid $pbTeal;
+			
+			h1{
+				font-size: 2.5rem;
+				text-align: center;
+			}
+
+			h3{
+				margin:5%;
+				//font-family: 'Pacifico', cursive;
+				text-align: center;
+				line-height: 1.5rem;
+				color:wheat;
+
+			}
+
+			.hero-logo{
+				width: 100%;
+				img{
+
+					width:70%;
+				}
+			}
+
+			button{
+				margin:5% auto;
+				width: 80%;
+			}
+		}
+	}
+	
+	.section-title{
+		font-size: 3.5rem;
+		color:$pbNavy;
+		
+	}
+	.au-copy{
+		padding:2%;
+		text-align: center;
+		font-family: Arial, Helvetica, sans-serif;
+		line-height: 1.3rem;
+		//width:90%
+		//background-color: $pbNavy;
+		
+	}
+	.about-section{
+		width: 100%;
+		
+		background-image: url("/dist/img/paw-2.png");
+		background-size: 20%;
+		background-position: left;
+		background-color: $pbBlue;
+		background-repeat: no-repeat;
+		.about-us{
+			width: 95%;
+			height: auto;
+			margin: 2% auto;
+			padding:2%;
+			display:flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			background-color: white;
+			border:3px solid $pbNavy;
+		}
+	}
+
+	.services{
+		width: 100%;
+		//margin:2% auto;
+		height: auto;
+		background-image: url("/dist/img/paw-2.png");
+		background-size: 3.5%;
+		background-position: center;
+		background-color: $pbNavy;
+		display: flex;
+		flex-direction: column;
+		
+		align-items: center;
+
+		.services-title{
+			margin:0;
+			font-family: 'Pacifico', cursive;
+			height: 15vh;
+			padding:8%;
+			background-color: white;
+			border-bottom: 10px solid wheat;
+			color:$pbBlue;
+			width: 100%;
+			text-align: center;
+			
+			background-image: url("/dist/img/paw-2.png");
+			//background-size: 25%;
+			background-repeat: no-repeat;
+			background-size: 55%;
+			background-position-x: 160%;
+			background-position-y: 35%;
+	
+		}
+
+		
+		.service-boxes{
+			width:100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-evenly;
+			align-items: center;
+			//background-color:white;
+		
+			.service-box{
+				//background-color: $pbNavy;
+				//border:3px solid $pbTeal;
+				width:95%;
+				margin:10% 2%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				position: relative;
+
+			
+				.service-icon{
+					background-color: $pbTeal;
+					width:100px;
+					height: 100px;
+					border-radius: 50%;
+					position: absolute;
+					top:-65px;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					border: 4.5px solid wheat;
+					
+
+					img{
+						width: 100%;
+
+					}
+
+				}
+
+				img.service-img{
+					width: 100%;
+					border:1px solid wheat;
+					border-bottom: none;
+					
+				}
+				
+				.service-title{
+					font-size: 2rem;
+					//margin:2% auto;
+					color:$pbNavy;
+					background-color: $pbTeal;
+					width: 100%;
+					text-align: center;
+				}
+
+				.service-copy{
+					background-color: $pbNavy;
+					padding:5%;
+					color:wheat;
+					border:1px solid $pbTeal;
+					
+				}
+				
+				.service-button{
+					background-color: $pbTeal;
+					color:$pbO-Navy;
+					font-weight: bold;
+					
+				}
+
+				.service-button:hover{
+					background-color:$pbBlue;
+					//border:1px solid $pbO-Navy;
+					color:wheat;
+					//font-size: 1.4rem;
+				}
+
+			
+			}
+
+
+		}
+	}
+
+	.adopt-section{
+		background-image: url("/dist/img/paw-2.png");
+		background-size: 25%;
+		background-repeat: no-repeat;
+		background-position:left;
+		background-color: $pbNavy;
+
+
+		.adopt{
+			width: 95%;
+			height: auto;
+			margin: 2% auto;
+			padding:3%;
+			display:flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			background-color: white;
+			border:3px solid $pbBlue;
+		}
+	}
+
+	
+}
+
+@media#{$tablet}{
+
+	.content-wrapper-page-2-services{
+
+		.hero{
+			height: 50vh;
+
+			.hero-welcome{
+				width: 40%;
+
+				h1{
+					font-size: 3.5rem;
+				}
+
+				h3{
+					font-size: 2.5rem;
+					text-align: center;
+				}
+			}
+		}
+		
+		.about-section,.adopt-section{
+
+			.about-us,.adopt{
+				width:80%;
+				
+				.button{
+					width:50%;
+				}
+			}
+		}
+
+		.services{
+			.service-boxes{
+				width:80%;
+
+			}
+		}
+	}
+
+}
+
+@media#{$desktop}{
+
+	.content-wrapper-page-2-services{
+
+		.hero{
+			height: 55vh;
+		}
+	
+		.services{
+
+			.services-title{
+				//margin:2% auto;
+				font-size: 5rem;
+				//color:$pbNavy;
+			}
+
+			.service-boxes{
+				width:100%;
+				display: flex;
+				flex-direction: row;
+
+				.service-box{
+					margin: 4% 2%;
+					img.service-img{
+						width: 100%;
+						height: 273px;
+					}
+				}
+
+				
+			}
+		}
+	}
+
+}
+
+@media#{$XLdesktop}{
+
+	.content-wrapper-page-2-services{
+
+		.hero{
+			height: 60vh;
+			background-position-y: -250px;
+
+			.hero-welcome{
+				max-width: 35%;
+				h1{
+					font-size: 5rem;
+				}
+			}
+		}
+
+		.au-copy{
+			height: 150px;
+			min-height: 170px;
+		}
+	
+		.about-section,.adopt-section{
+			.about-us,.adopt{
+				width:75%;
+			}
+		}
+
+		.services{
+			.service-boxes{
+				width:100%;
+				
+				display: flex;
+				flex-direction: row;
+
+				.service-box{
+					margin: 1% 2%;
+					
+					img.service-img{
+						width: 100%;
+						height: 400px;
+					}
+
+					.service-copy{
+						margin: 0 0 5% 0;
+					}
+					.button{
+						width:50%;
+						position: relative;
+						top:-55px;
+					}
+				
+					
+				}
+			}
+		}
+	}
+
+}
+
 
 /* 2. ADPOPTIONS ================================= */
 
-.content-wrapper-page-2-adoptions{
+.content-wrapper-page-3-adoptions{
 	display: flex;
 	flex-direction: column;
 
+	
+	
 	.search-window{
+		.banner{
+			width:100%;
+			height: 10px;
+			background-color: $pbTeal;
+			color:$pbTeal;
+		}
 		background-color: $pbTeal;
 		width: 100%;
-		height: 100vh;
+		height: auto;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		background-image: url("../img/adopt-bkrnd.jpg");
 		background-size: cover;
-
+		border: 10px solid $pbTeal;
+		border-left: none;
+		border-right: none;
 		#search-form{
-
-			min-height: 75%;
+			height: auto;
+			min-height: 90%;
 			width: 90%;
 			margin: 2% auto;
 			background-color: $pbO-Navy;
@@ -594,12 +987,11 @@ button:hover,.button:hover{
 				justify-content: space-evenly;
 				align-items: center;
 				width: 80%;
-				height: 60%;
-				text-align: center;
+				height: 50%;
+				
 
 				.search-logo{
-
-					width: 275px;
+					width: 255px;
 				}
 				
 				.page-title{
@@ -613,29 +1005,49 @@ button:hover,.button:hover{
 
 				.so-copy{
 					p{
+						margin: 4% auto;
 						text-align: left;
 						line-height: 1.4rem;
-						font-size: 1.1rem;
+						font-size: 1rem;
+						text-align: center;
+					}
+					ul{
+						text-align: center;
+						background-color: $pbBlue;
+						border: 3px solid $pbTeal;
+						padding: 2%;
+						margin: 2%;
+						background-image: url("/dist/img/paw-2.png");
+						background-repeat: no-repeat;
+						background-size: 35%;
+						background-position-x: 120%;
+						background-position-y: 35%;
+
+						p{
+							font-size: 1.2rem;
+							color: $pbNavy;
+							font-weight: bold;
+						}
+						
+						
+						li{
+							color: wheat;
+							margin: 2%;
+							font-size: 1.2rem;
+							line-height: 1.5rem;
+						}
+	
 					}
 				}
+				
 
-				ul{
-					text-align: left;
-					list-style: circle;
-					li{
-						color: $pbTeal;
-						margin: 5%;
-						font-size: 1.4rem;
-						line-height: 1.5rem;
-					}
-
-				}
 			}
 		
 			.search-input{
 				//background-color: lightcoral;
-				margin-top:5%;
-				width: 60%;
+				margin-top:4%;
+				width: 80%;
+				height: 40%;
 				max-width: 250px;
 				display: flex;
 				flex-direction: row;
@@ -643,38 +1055,37 @@ button:hover,.button:hover{
 				justify-content: space-evenly;
 
 				p{
-					color:yellow;
+					color:wheat;
+					
 					font-weight: bold;
 					font-size: 1.2rem;
-					
+					line-height: 2rem;
 				}
 
 				.zip{					
 					.zip-label{
 						width:50%;
 						height: 30px;
+						//margin: 2%;
 					}
 
-				}
-
-				#zipCode{
-					//width:150px;
 				}
 			}
 			
 			.button{
+				margin: 5%;
 				width: 50%;
 			}
 		}
 	}
 
 	.adoptions{
-		background-color: white;
+		background-color: $pbNavy;
 		background-image: url("../img/paw-2.png");
 		height: auto;
 		display: flex;
 		flex-direction: column;
-		border: 2px solid $pbBlue;
+		border: 3px solid $pbBlue;
 		border-left: none;
 		
 		
@@ -684,7 +1095,7 @@ button:hover,.button:hover{
 			justify-content: space-between;
 			margin: 2%;
 			background-color: $pbNavy;
-			border-radius: 2%;
+			border: 2px solid $pbBlue;
 
 
 
@@ -726,11 +1137,13 @@ button:hover,.button:hover{
 					
 					.pet-name{
 						font-size:1.4em;
-						font-weight: bold;
+						font-family: 'Pacifico', cursive;
+						letter-spacing: .3rem;
+						//font-weig bold;
 						padding: 2%;
 						width: 100%;
 						background-color: $pbBlue;
-						color:$pbNavy;
+						color:wheat;
 					}
 
 					.pet-icons{
@@ -741,7 +1154,8 @@ button:hover,.button:hover{
 						flex-direction: column;
 						justify-content: space-evenly;
 						border-top: 1px solid black;
-						font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+						font-family: 'P';
+						color: $pbNavy;
 
 
 						.icons{
@@ -762,6 +1176,11 @@ button:hover,.button:hover{
 						text-decoration: none;
 						display: flex;
 						justify-content: center;
+						
+						button{
+							border-radius: 0;
+							
+						}
 					}
 				}
 
@@ -776,10 +1195,13 @@ button:hover,.button:hover{
 				align-items: center;
 				// background-color: white;
 				// border: 3px dotted $pbTeal;
+				background-image: url("/dist/img/paw-2.png");
+				background-size: 5%;
 
 
 				.pet-img{
 					width: 100%;
+					max-height: 470px;
 					margin: 2% auto;
 					object-fit: contain;
 				}
@@ -797,7 +1219,7 @@ button:hover,.button:hover{
 
 @media#{$tablet}{
 
-	.content-wrapper-page-2-adoptions{
+	.content-wrapper-page-3-adoptions{
 		.search-window{
 
 			margin: none;
@@ -823,9 +1245,17 @@ button:hover,.button:hover{
 					display: flex;
 					flex-direction: row;
 					justify-content: center;
+					background-color: white;
+
 					.pet-info{
 						//margin: 3%;
 						height: auto;
+
+						.pet-url{
+							button{
+								border-radius: 10px;
+							}
+						}
 					}
 				}
 
@@ -842,6 +1272,10 @@ button:hover,.button:hover{
 				}
 			}
 
+			.adoption-file:nth-child(even){
+				flex-direction: row-reverse;
+			}
+
 		}
 	}
 
@@ -849,14 +1283,17 @@ button:hover,.button:hover{
 
 @media#{$XLdesktop}{
 
-	.content-wrapper-page-2-adoptions{
+	.content-wrapper-page-3-adoptions{
 		display: flex;
 		flex-direction: row;
 		
 		.search-window{
-	
 			#search-form{
 				min-width:50%;
+				margin: 5% auto;
+				.search-input{
+					height: 0;
+				}
 			}
 		}
 		.adoptions{
@@ -870,7 +1307,7 @@ button:hover,.button:hover{
 			.adoption-file{
 				width:95%;
 				flex-direction: row;
-				border: 1px solid $pbNavy;
+				//border: 1px solid $pbNavy;
 				.adoption-info{
 					height: auto;
 
@@ -880,16 +1317,6 @@ button:hover,.button:hover{
 					}
 				}
 
-				.adoption-photo-container{
-				
-					// background-image: url("../img/polka1.jpg");
-					// background-size: cover;
-					
-					.pet-img{
-						width: 85%;
-						//max-height: 300px;
-					}
-				}
 			}
 
 
@@ -906,6 +1333,13 @@ button:hover,.button:hover{
 .content-wrapper-page-4-contactUs{
 	display: flex;
 	flex-direction: column;
+	
+	.banner{
+		width:100%;
+		height: 10px;
+		background-color: $pbTeal;
+		color:$pbTeal;
+	}
 
 	.search-window{
 		background-color: $pbTeal;
@@ -924,7 +1358,7 @@ button:hover,.button:hover{
 			height: auto;	
 			min-height: 75%;
 			width: 90%;
-			margin: 2% auto;
+			margin: 2%;
 			background-color: $pbO-Navy;
 			border-radius: 2%;
 			color:white;
@@ -1008,13 +1442,20 @@ button:hover,.button:hover{
 			}
 			
 			.contact-form{
-				width: 90%;
+				width: 80%;
 				display: flex;
 				flex-direction: column;
+				color: wheat;
+				//padding: 2%;
+
+				label{
+					margin-top: 2%;
+				}
 			}
 			
 			.button{
 				width: 50%;
+				margin: 5% auto;
 			}
 		}
 	}
@@ -1029,7 +1470,6 @@ button:hover,.button:hover{
 			margin: none;
 			#search-form{
 				width:50%;
-				margin: auto 2%;
 			}
 		}
 	
