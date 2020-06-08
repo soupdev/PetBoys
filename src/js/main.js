@@ -8,10 +8,26 @@ let input_zipCode = document.querySelector("#zipCode");
 let zipCode;
 let petGender;
 let input_petGender = document.querySelector("[name=pup_gender]");
+let contactButton = document.querySelector("#contact-button");
+
 
 function clearResults(){
     console.log("cleared results", adoptions);
     adoptions.innerHTML = " ";
+}
+
+function contactMessage(){
+    let thanks = document.querySelector(".contact-thanks");
+    let hideForm = document.querySelector(".contact-form");
+   
+    if(thanks.style.display === "flex"){
+        thanks.style.display = "none";
+        hideForm.style.display = "flex";
+    }else{
+        thanks.style.display = "flex";
+        hideForm.style.display ="none";
+    }
+
 }
 
 
@@ -169,7 +185,8 @@ let showDogs = function(){
         pet_photo.src= `${md_dog_photo_approved}`;
         
         if(pet_photo.src != `${md_dog_photo_approved}`){
-            adoption_file.className += "-hidden"; 
+            adoption_file.className += " adoption-file-hidden"; 
+            pet_photo.src="dist/img/dog_comingSoon1.png"
             //stylng for .adoption-file-hidden set to display:none;
         }
 

@@ -24,7 +24,7 @@
 			<nav>
 				<ul>
 					<li><a href="index.html">Home</a></li> 
-					<li><a href="team.html">Our Team</a></li> 
+					<li><a href="team.html">Team</a></li> 
 					<li><a href="adoptions.html">Adoptions</a></li> 
 					<li><a class="active" href="contact.html">Contact</a></li>
 				</ul> 
@@ -39,7 +39,7 @@
 					<form id="search-form">
 						
 						<div class="special-offer">
-							<img class="search-logo" src="dist/img/pepBoys_logo.png">
+							<a href="index.html"><img class="search-logo" src="dist/img/pepBoys_logo.png"></a>
 							<h1 class="page-title">CONTACT US</h1> 
 							<div class="so-copy">
 								<p>
@@ -48,8 +48,14 @@
 							</div>
 						</div>
 						
+						<div class="contact-thanks">
+								<h1 class="page-title">THANK YOU</h1> 
+								<p> Your message has been recieved and we will be in touch!</p>
+
+							<a class="button"><button>Send Another Message</button></a>
+						</div>
 						
-						<form>  
+						<form class="contact-form-container">  
                             <fieldset class="contact-form">
                            
 							    <label for="fname">First Name</label>
@@ -64,11 +70,13 @@
                                 <label for="subject">Subject</label>
                                 <textarea id="subject" name="subject" placeholder="Get In Touch..." style="height:100px"></textarea>
 
-                               	<input class ="button" type="button" name="buttony" id="buttony" value="Contact Us">
+                               	<input class ="button" type="button" name="buttony" id="contact-button" value="Contact Us" onclick="contactMessage()">
                             </fieldset>
 						</form>
 				
 					</form>
+
+					
 				<div class="banner"></div>
 				</section>
 

@@ -62,6 +62,7 @@ header, footer{
 
 	nav{
 		width: 100%;
+		margin:2%;
 
 		ul{
 			display: flex;
@@ -70,7 +71,7 @@ header, footer{
 			margin: 1%;
 
 			li{
-				width: 20%;
+				width: auto;
 				font-size: 1.2rem;
 				display: flex;
 				justify-content: center;
@@ -127,6 +128,10 @@ button,.button{
 	text-decoration: none;
 }
 
+.button{
+	width: 75%;
+}
+
 button:hover,.button:hover{
 	background-color: $pbTeal;
 	color: $pbNavy;
@@ -138,12 +143,16 @@ button:hover,.button:hover{
 	header, footer{
 		.logo-box{
 			display: flex;
-			width: 10%;
+			width: 6%;
 			margin:2%;
 		}
 
 		nav{
-			width: 70%;
+			width: 50%;
+		}
+
+		.button{
+			width: 65%;
 		}
 
 		.social-box{
@@ -169,13 +178,9 @@ button:hover,.button:hover{
 
 @media#{$XLdesktop}{
 	header,footer{
-		.logo-box{
-			width: 5%;
-		}
-
+	
 		nav{
-			width: 50%;
-
+		
 			ul{
 				li{
 					font-size: 1.5rem;
@@ -183,6 +188,8 @@ button:hover,.button:hover{
 			}
 		}
 	}
+
+
 }
 
 /* 1. HOME ================================= */
@@ -222,7 +229,7 @@ button:hover,.button:hover{
 			}
 
 			h3{
-				margin:5%;
+				margin-bottom:5%;
 				//font-family: 'Pacifico', cursive;
 				text-align: center;
 				line-height: 1.5rem;
@@ -240,7 +247,7 @@ button:hover,.button:hover{
 
 			button{
 				margin:5% auto;
-				width: 80%;
+				//width: 80%;
 			}
 		}
 	}
@@ -432,26 +439,33 @@ button:hover,.button:hover{
 			height: 50vh;
 
 			.hero-welcome{
-				width: 37%;
+				max-width: 35%;
 
 				h1{
-					font-size: 3.5rem;
+					//font-size: 3.5rem;
 				}
 
 				h3{
 					font-size: 1.3rem;
 					text-align: center;
 				}
+
+				
+				button{
+					width: 100%;
+				}
+
+
 			}
 		}
 		
 		.about-section,.adopt-section{
 
 			.about-us,.adopt{
-				width:80%;
+				width:75%;
 				
 				.button{
-					width:50%;
+					width:40%;
 				}
 			}
 		}
@@ -472,6 +486,15 @@ button:hover,.button:hover{
 
 		.hero{
 			height: 55vh;
+
+			.hero-welcome{
+				
+				h3{
+					font-size: 1.5rem;
+				}
+
+			
+			}
 		}
 	
 		.services{
@@ -491,7 +514,7 @@ button:hover,.button:hover{
 					margin: 4% 2%;
 					img.service-img{
 						width: 100%;
-						height: 273px;
+						min-height: 273px;
 					}
 				}
 
@@ -507,14 +530,17 @@ button:hover,.button:hover{
 	.content-wrapper-page-1-home{
 
 		.hero{
-			height: 70vh;
-			background-position-y: -250px;
-
+			
 			.hero-welcome{
-				max-width: 35%;
-				h1{
-					font-size: 5rem;
+				
+				h3{
+					font-size: 1.6rem;
 				}
+				
+				.button{
+					max-width: 65%;
+				}
+			
 			}
 		}
 
@@ -525,7 +551,10 @@ button:hover,.button:hover{
 	
 		.about-section,.adopt-section{
 			.about-us,.adopt{
-				width:75%;
+			
+				.button{
+					max-width:35%;
+				}
 			}
 		}
 
@@ -577,7 +606,7 @@ button:hover,.button:hover{
 		width: 100%;
 		height: 30vh;
 		background-color: $pbNavy;
-		background-image: url("/dist/img/smile-dog.jpg") ;
+		background-image: url("/dist/img/adopt-bkrnd.jpg") ;
 		background-size: cover;
 		background-position: center;
 
@@ -600,9 +629,10 @@ button:hover,.button:hover{
 			}
 
 			h3{
-				margin:5%;
+				//margin:0 5%;
 				//font-family: 'Pacifico', cursive;
 				text-align: center;
+				font-size: 1.5rem;
 				line-height: 1.5rem;
 				color:wheat;
 
@@ -809,17 +839,17 @@ button:hover,.button:hover{
 	.content-wrapper-page-2-services{
 
 		.hero{
-			height: 50vh;
+			height: 60vh;
 
 			.hero-welcome{
-				width: 40%;
+				max-width: 37%;
 
 				h1{
-					font-size: 3.5rem;
+					font-size: 3rem;
 				}
 
 				h3{
-					font-size: 2.5rem;
+					font-size: 2.1rem;
 					text-align: center;
 				}
 			}
@@ -851,7 +881,13 @@ button:hover,.button:hover{
 	.content-wrapper-page-2-services{
 
 		.hero{
-			height: 55vh;
+			
+			.hero-welcome{
+				
+				h1{
+					font-size: 3rem;
+				}
+			}
 		}
 	
 		.services{
@@ -886,18 +922,7 @@ button:hover,.button:hover{
 
 	.content-wrapper-page-2-services{
 
-		.hero{
-			height: 60vh;
-			background-position-y: -250px;
-
-			.hero-welcome{
-				max-width: 35%;
-				h1{
-					font-size: 5rem;
-				}
-			}
-		}
-
+	
 		.au-copy{
 			height: 150px;
 			min-height: 170px;
@@ -963,7 +988,7 @@ button:hover,.button:hover{
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		background-image: url("../img/adopt-bkrnd.jpg");
+		background-image: url("../img/spot.jpg");
 		background-size: cover;
 		border: 10px solid $pbTeal;
 		border-left: none;
@@ -1022,11 +1047,13 @@ button:hover,.button:hover{
 						background-size: 35%;
 						background-position-x: 120%;
 						background-position-y: 35%;
+						list-style: disc inside;
 
 						p{
-							font-size: 1.2rem;
+							font-size: 1.3rem;
 							color: $pbNavy;
 							font-weight: bold;
+							//font-family: 'Pacifico', cursive;
 						}
 						
 						
@@ -1056,7 +1083,7 @@ button:hover,.button:hover{
 
 				p{
 					color:wheat;
-					
+					//font-family: 'Pacifico', cursive;
 					font-weight: bold;
 					font-size: 1.2rem;
 					line-height: 2rem;
@@ -1085,11 +1112,12 @@ button:hover,.button:hover{
 		height: auto;
 		display: flex;
 		flex-direction: column;
-		border: 3px solid $pbBlue;
+		border: 10px solid $pbTeal;
 		border-left: none;
+		border-right: none;
 		
 		
-		.adoption-file{
+		.adoption-file,.adoption-file-hidden{
 			display: flex;
 			flex-direction: column-reverse;
 			justify-content: space-between;
@@ -1137,8 +1165,8 @@ button:hover,.button:hover{
 					
 					.pet-name{
 						font-size:1.4em;
-						font-family: 'Pacifico', cursive;
-						letter-spacing: .3rem;
+						//font-family: 'Pacifico', cursive;
+						//letter-spacing: .3rem;
 						//font-weig bold;
 						padding: 2%;
 						width: 100%;
@@ -1179,6 +1207,7 @@ button:hover,.button:hover{
 						
 						button{
 							border-radius: 0;
+							font-size: 1rem;;
 							
 						}
 					}
@@ -1210,8 +1239,9 @@ button:hover,.button:hover{
 		}
 	
 		.adoption-file-hidden{
-			//background-color: linen;
-			display: none;
+			img{
+				max-width: 75%;
+			}
 		}
 
 	}
@@ -1235,7 +1265,7 @@ button:hover,.button:hover{
 			// height: 100vh;
 			// overflow: auto;
 		
-			.adoption-file{
+			.adoption-file,.adoption-file-hidden{
 				width:80%;
 				flex-direction: row;
 			
@@ -1276,6 +1306,7 @@ button:hover,.button:hover{
 				flex-direction: row-reverse;
 			}
 
+
 		}
 	}
 
@@ -1304,7 +1335,7 @@ button:hover,.button:hover{
 			display: none;
 			background-size: cover;
 
-			.adoption-file{
+			.adoption-file,.adoption-file-hidden{
 				width:95%;
 				flex-direction: row;
 				//border: 1px solid $pbNavy;
@@ -1358,7 +1389,7 @@ button:hover,.button:hover{
 			height: auto;	
 			min-height: 75%;
 			width: 90%;
-			margin: 2%;
+			margin: 2% auto;
 			background-color: $pbO-Navy;
 			border-radius: 2%;
 			color:white;
@@ -1409,6 +1440,24 @@ button:hover,.button:hover{
 					}
 
 				}
+
+			}
+			
+			.contact-thanks{
+				display: none;
+				flex-direction: column;
+				margin:2%;
+				font-size: 1.2rem;
+
+				.page-title{
+					font-size: 2rem;
+					margin: 2% auto;
+					color: $pbTeal;
+				}
+			}
+
+			.contact-form{
+				display: flex;
 			}
 		
 			.search-input{
@@ -1469,7 +1518,7 @@ button:hover,.button:hover{
 
 			margin: none;
 			#search-form{
-				width:50%;
+				max-width:60%;
 			}
 		}
 	
@@ -1489,6 +1538,7 @@ button:hover,.button:hover{
 
 			#search-form{
 				width:35%;
+				margin: 2%;;
 			}
 		}
 	
